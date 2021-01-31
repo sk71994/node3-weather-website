@@ -13,7 +13,12 @@ const forecast = (latitude, longitude, callback) => {
       const weatherDescription = foreCast.weather_descriptions;
       const temp = foreCast.temperature;
       const feelsLike = foreCast.feelslike;
-      callback(undefined, weatherDescription[0] +". It is currently " +temp + " fahrenheit out. It feels like " +feelsLike + " fahrenheit out.")
+      const humidity = foreCast.humidity;
+      const visibility = foreCast.visibility;
+      callback(undefined,
+         weatherDescription[0] +". It is currently " +temp + " fahrenheit out. It feels like " 
+         +feelsLike + " fahrenheit out and the humidity is " + humidity + 
+         "% . So thats why dude your Visibility for driving would be: " + visibility)
     }
   })
 }
